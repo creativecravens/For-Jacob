@@ -93,7 +93,14 @@
       "url": "https://creativecravens.github.io/For-Jacob/",
       "name": "Blood in Blackwood | A Slasher Horror Novel by Jacob Hill",
       "inLanguage": "en",
-      "about": { "@id": "https://creativecravens.github.io/For-Jacob/#book" }
+      "about": { "@id": "https://creativecravens.github.io/For-Jacob/#book" },
+      "creator": {
+        "@type": "Person",
+        "name": "Carolina Cravens",
+        "url": "https://creativecravens.com/",
+        "jobTitle": "Creative Technologist",
+        "address": { "@type": "PostalAddress", "addressLocality": "Dallas", "addressRegion": "TX", "addressCountry": "US" }
+      }
     }
   ]
 }
@@ -154,7 +161,7 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);overflow-x:clip}/* the fixed grain, rain and mist overlays use inset:-50%, which pushed the page 9px wide on phones. clip contains them without creating a scroll container, so sticky still works. */
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{
   background:var(--ink);color:var(--bone);
@@ -409,7 +416,7 @@ blockquote cite{display:block;font-style:normal;font-family:"Special Elite",mono
 .final .ctas{justify-content:center;margin-top:2rem}
 .final .countdown{font-family:"Special Elite",monospace;color:var(--fog);font-size:.95rem;margin-bottom:1rem;letter-spacing:.2em}
 footer{padding:2rem clamp(1.25rem,6vw,6rem) 6rem;text-align:center;color:var(--fog);font-size:.9rem;border-top:1px solid var(--line)}
-footer p+p{margin-top:.4rem}
+footer p+p{margin-top:.4rem}footer .credit{color:var(--bone)}footer .credit a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(232,162,74,.4)}footer .credit a:hover{border-bottom-color:var(--amber)}footer .credit a:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
 
 /* sticky bar */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:.6rem;align-items:center;justify-content:space-between;
@@ -683,6 +690,7 @@ footer p+p{margin-top:.4rem}
 
 <footer>
   <p>© <span id="yr"></span> <span data-author>Jacob Hill</span>. Blood in Blackwood, From the Blackwood Library Archives, Book One. Independently published.</p>
+  <p class="credit">Site designed and built by <a href="https://creativecravens.com/" rel="author">Carolina Cravens</a>.</p>
   <p>Amazon, Kindle and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.</p>
 </footer>
 
